@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='../unpkg.com/boxicons%402.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="resume.css"> <!-- You'll need to create a CSS file for styling -->
+    <title>Ankit - QA Automation Tester</title>
+</head>
+
+<body>
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a href="index.html"><span class="logo-text">Ankit</span></a>
+            </div>
+            <!-- If you want to add a burger menu for responsive design, you can add it here -->
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="professional-summary">
+            <h1>Professional Summary</h1>
+            <div class="role">
+                <h2>Role: QA Automation Tester</h2>
+                <h3>Client: Comcast NBCUniversal</h3>
+                <h3>Project: USJ Commerce & Ticketing</h3>
+            </div>
+            <div class="responsibilities">
+                <h2>Responsibilities:</h2>
+                <ul>
+                    <li>Interacted with developers and Product Owner to analyze business requirements and functional specifications of the project.</li>
+                    <li>Created and maintained Traceability matrix for requirements and test cases.</li>
+                    <li>Developed Test Plan and Test Strategy.</li>
+                    <li>Designed and developed Test Plans, Test Cases, and strategies from functional requirements and design specification documents for Manual and Automation testing.</li>
+                    <li>Conducted Regression testing, Functional testing, and Integration testing of a web-based application working in an Agile environment.</li>
+                    <li>Reviewed and updated Manual test cases and created Functional automation Test scripts in Selenium.</li>
+                    <li>Involved in designing Automation Test cases using Selenium WebDriver, Java, TestNG, Maven.</li>
+                    <li>Resolving the issues related to automation for team.</li>
+                    <li>Resolving Merge conflicts, Peer Code review.</li>
+                </ul>
+            </div>
+            <div class="role">
+                <h2>Role: Test Analyst</h2>
+                <h3>Client: Comcast NBCUniversal</h3>
+                <h3>Project: UPR Martech</h3>
+            </div>
+            <div class="responsibilities">
+                <h2>Responsibilities:</h2>
+                <ul>
+                    <li>Designed and developed an automation framework using Java JDK 19, Eclipse/IntelliJ, TestNG, and Maven.</li>
+                    <!-- Add other responsibilities for the Test Analyst role -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- You can include a script for any dynamic functionality if needed -->
+
+</body>
+
+</html>
