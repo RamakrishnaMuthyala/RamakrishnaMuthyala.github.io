@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Ramakrishna Portfolio</title>
+
+  <!-- Boxicons and Custom CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="container">
+    <div class="page-header">
+      <div class="logo">
+        <a href="index.html"><span class="logo-text">R</span>M</a>
+      </div>
+      <input type="checkbox" id="click">
+      <label for="click" class="mainicon">
+        <div class="menu">
+          <i class='bx bx-menu'></i>
+        </div>
+      </label>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="professional-journey.html">Professional Journey</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+      </ul>
+      <label class="mode" title="Dark Mode">
+        <input type="checkbox" id="darkModeToggle">
+        <i class='bx bxs-sun'></i>
+      </label>
+    </div>
+  </header>
+
+  <!-- Resume Section -->
+  <section class="resume-section-modern container">
+    <div class="resume-card">
+      <h2 class="resume-title">My Resume</h2>
+      <p class="resume-subtext">Preview or download my resume below.</p>
+
+      <div class="resume-buttons">
+        <!-- <button class="btn-modern view" onclick="openResumeModal()">
+          <i class='bx bx-show'></i> View Resume
+        </button> -->
+        <a href="resume.pdf" download class="btn-modern download">
+            <i class='bx bx-show'></i> View Resume
+        <a href="resume.pdf" download class="btn-modern download">
+          <i class='bx bx-download'></i> Download PDF
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="resumeModal" class="resume-modal">
+      <div class="resume-modal-content">
+        <span class="resume-close" onclick="closeResumeModal()">&times;</span>
+        <iframe src="resume.pdf" class="resume-iframe" title="Resume PDF"></iframe>
+      </div>
+    </div>
+
+ <!-- Resume Modal -->
+<div id="resumeModal" class="modal">
+    <div class="modal-content">
+      <button class="close" onclick="closeResumeModal()">&times;</button>
+      <iframe src="resume.pdf" title="Resume"></iframe>
+    </div>
+  </div>
+  
+
+    </section>
+  <!-- Scripts -->
+  <script>
+    function openResumeModal() {
+      const modal = document.getElementById("resumeModal");
+      modal.style.display = "flex";
+    }
+  
+    function closeResumeModal() {
+      const modal = document.getElementById("resumeModal");
+      modal.style.display = "none";
+    }
+  
+    window.onclick = function (event) {
+      const modal = document.getElementById("resumeModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+  

@@ -15,9 +15,45 @@
      window.dataLayer = window.dataLayer || [];
      function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());
+     gtag('config', 'G-F27XB2JWE8');
+    </script>
+ <script>
+  document.getElementById('view-resume')?.addEventListener('click', function () {
+    gtag('event', 'resume_view', {
+      event_category: 'engagement',
+      event_label: 'View Resume'
+    });
+  });
 
-  gtag('config', 'G-F27XB2JWE8');
+  document.getElementById('download-resume')?.addEventListener('click', function () {
+    gtag('event', 'resume_download', {
+      event_category: 'engagement',
+      event_label: 'Download Resume'
+    });
+  });
 </script>
+<script>
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        const visitorData = {
+          ip: data.ip,
+          city: data.city,
+          country: data.country_name,
+          browser: navigator.userAgent,
+          referrer: document.referrer || 'Direct',
+          page: window.location.pathname
+        };
+  
+        fetch('Yhttps://script.google.com/macros/s/AKfycbwCbFfy7-E8sZH6lLxP5ZLy3z6gjgfIw7fc-QIJ7ab9t8RruSEGED41BIJArSRL1SuKxA/exec', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(visitorData)
+        });
+      })
+      .catch(err => console.error('Visitor logging failed:', err));
+  </script>
+  
 </head>
 
 <body>
@@ -39,6 +75,8 @@
                 <li><a href="skills.html" style="--navAni:3">Skills</a></li>
                 <li><a href="professional-journey.html" style="--navAni:4">Professional Journey</a></li>
                 <!-- <li><a href="#" style="--navAni:5">Resume</a></li> -->
+                <li><a href="resume.html">Resume</a></li>
+
             </ul>
             <label class="mode" title="Dark Mode">
                 <input type="checkbox" id="darkModeToggle">
