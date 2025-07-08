@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,32 +31,29 @@
   });
 </script>
 <script>
-    (async () => {
-      try {
-        // Fetch IP and location info
-        const ipRes = await fetch("https://ipapi.co/json");
-        const ipData = await ipRes.json();
-    
-        // Send visitor data to Google Apps Script
-        await fetch("https://script.google.com/macros/s/AKfycbwCbFfy7-E8sZH6lLxP5ZLy3z6gjgfIw7fc-QIJ7ab9t8RruSEGED41BIJArSRL1SuKxA/exec", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ip: ipData.ip,
-            city: ipData.city,
-            country: ipData.country_name,
-            browser: navigator.userAgent,
-            referrer: document.referrer,
-            page: window.location.pathname
-          })
-        });
-      } catch (error) {
-        console.error("Visitor tracking failed:", error);
-      }
-    })();
-    </script>
-    
+function doPost(e) {
+    try {
+      const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Visitors");
+      const data = JSON.parse(e.postData.contents);
   
+      sheet.appendRow([
+        new Date(),
+        data.ip || "Missing IP",
+        data.city || "Missing City",
+        data.country || "Missing Country",
+        data.browser || "Missing Browser",
+        data.referrer || "Missing Referrer",
+        data.page || "Missing Page"
+      ]);
+  
+      return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+    } catch (err) {
+      Logger.log("ERROR: " + err);
+      return ContentService.createTextOutput("Error: " + err)
+        .setMimeType(ContentService.MimeType.TEXT);
+    }
+  }
+</script>
 </head>
 
 <body>
