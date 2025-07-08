@@ -33,26 +33,31 @@
   });
 </script>
 <script>
-    fetch('https://ipapi.co/json/')
-      .then(res => res.json())
-      .then(data => {
-        const visitorData = {
-          ip: data.ip,
-          city: data.city,
-          country: data.country_name,
-          browser: navigator.userAgent,
-          referrer: document.referrer || 'Direct',
-          page: window.location.pathname
-        };
-  
-        fetch('https://script.google.com/macros/s/AKfycbwCbFfy7-E8sZH6lLxP5ZLy3z6gjgfIw7fc-QIJ7ab9t8RruSEGED41BIJArSRL1SuKxA/exec', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(visitorData)
+    (async () => {
+      try {
+        // Fetch IP and location info
+        const ipRes = await fetch("https://ipapi.co/json");
+        const ipData = await ipRes.json();
+    
+        // Send visitor data to Google Apps Script
+        await fetch("https://script.google.com/macros/s/AKfycbwCbFfy7-E8sZH6lLxP5ZLy3z6gjgfIw7fc-QIJ7ab9t8RruSEGED41BIJArSRL1SuKxA/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ip: ipData.ip,
+            city: ipData.city,
+            country: ipData.country_name,
+            browser: navigator.userAgent,
+            referrer: document.referrer,
+            page: window.location.pathname
+          })
         });
-      })
-      .catch(err => console.error('Visitor logging failed:', err));
-  </script>
+      } catch (error) {
+        console.error("Visitor tracking failed:", error);
+      }
+    })();
+    </script>
+    
   
 </head>
 
