@@ -109,7 +109,7 @@
       }
     };
   </script>
-  
+  <!-- 
   <script>
     (async () => {
       try {
@@ -137,8 +137,27 @@
       }
     })();
     </script>
-
-
+  -->
+    <script> 
+  function doPost(e) {
+    const sheet = SpreadsheetApp.openById("1I2qxL54a-0sznyr0bbBPY-b5ligFQ2F-4AacCRw9ON4").getSheetByName("Sheet1");
+    const data = JSON.parse(e.postData.contents);
+  
+    sheet.appendRow([
+      new Date(),
+      data.ip,
+      data.city,
+      data.country,
+      data.browser,
+      data.referrer,
+      data.page
+    ]);
+  
+    return ContentService.createTextOutput(JSON.stringify({ status: "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+</script>
   <script>
   <!-- ✅ Visitor Tracking Script (Moved to end, logs to Google Sheet) -->
   function doPost(e) {
