@@ -38,25 +38,40 @@
     </div>
   </header>
 
-  <!-- Resume Section -->
-  <section class="resume-section-modern container">
-    <div class="resume-card">
-      <h2 class="resume-title">My Resume</h2>
-      <p class="resume-subtext">Preview or download my resume below.</p>
+<!-- Resume Section -->
+<section class="resume-section-modern container">
+  <div class="resume-card">
+    <h2 class="resume-title">My Resume</h2>
+    <p class="resume-subtext">Preview or download my resume below.</p>
 
-      <div class="resume-buttons">
-        <button class="btn-modern view" onclick="openResumeModal()">
-          <i class='bx bx-show'></i> View Resume
-        </button>
-        <!--  
-        <a href="Resume.pdf" download class="btn-modern download">
-            <i class='bx bx-show'></i> View Resume -->
-        <a href="Resume.pdf" download class="btn-modern download">
-          <i class='bx bx-download'></i> Download PDF
-          
-        </a>
-      </div>
+    <div class="resume-buttons">
+      <!-- View Resume Button -->
+      <button id="view-resume" class="btn-modern view" onclick="openResumeModal()">
+        <i class='bx bx-show'></i> View Resume
+      </button>
+
+      <!-- Download Resume Link -->
+      <a id="download-resume" href="Resume.pdf" download class="btn-modern download">
+        <i class='bx bx-download'></i> Download Resume
+      </a>
     </div>
+  </div>
+</section>
+
+  document.getElementById('view-resume')?.addEventListener('click', function () {
+    gtag('event', 'resume_view', {
+      event_category: 'engagement',
+      event_label: 'View Resume'
+    });
+  });
+
+  document.getElementById('download-resume')?.addEventListener('click', function () {
+    gtag('event', 'resume_download', {
+      event_category: 'engagement',
+      event_label: 'Download Resume'
+    });
+  });
+</script>
 
     <!-- Modal -->
     <div id="resumeModal" class="resume-modal">
