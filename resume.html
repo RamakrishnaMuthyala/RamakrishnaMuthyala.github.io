@@ -38,71 +38,63 @@
     </div>
   </header>
 
-<!-- Resume Section -->
-<section class="resume-section-modern container">
-  <div class="resume-card">
-    <h2 class="resume-title">My Resume</h2>
-    <p class="resume-subtext">Preview or download my resume below.</p>
+  <!-- Resume Section -->
+  <section class="resume-section-modern container">
+    <div class="resume-card">
+      <h2 class="resume-title">My Resume</h2>
+      <p class="resume-subtext">Preview or download my resume below.</p>
 
-    <div class="resume-buttons">
-      <!-- View Resume Button -->
-      <button id="view-resume" class="btn-modern view" onclick="openResumeModal()">
-        <i class='bx bx-show'></i> View Resume
-      </button>
+      <div class="resume-buttons">
+        <!-- ✅ Added ID -->
+        <button id="view-resume" class="btn-modern view" onclick="openResumeModal()">
+          <i class='bx bx-show'></i> View Resume
+        </button>
 
-      <!-- Download Resume Link -->
-      <a id="download-resume" href="Resume.pdf" download class="btn-modern download">
-        <i class='bx bx-download'></i> Download Resume
-      </a>
+        <!-- ✅ Added ID -->
+        <a id="download-resume" href="Resume.pdf" download class="btn-modern download">
+          <i class='bx bx-download'></i> Download Resume
+        </a>
+      </div>
     </div>
-  </div>
-</section>
 
-  document.getElementById('view-resume')?.addEventListener('click', function () {
-    gtag('event', 'resume_view', {
-      event_category: 'engagement',
-      event_label: 'View Resume'
-    });
-  });
-
-  document.getElementById('download-resume')?.addEventListener('click', function () {
-    gtag('event', 'resume_download', {
-      event_category: 'engagement',
-      event_label: 'Download Resume'
-    });
-  });
-</script>
-
-    <!-- Modal -->
+    <!-- ✅ Single Clean Modal -->
     <div id="resumeModal" class="resume-modal">
       <div class="resume-modal-content">
         <span class="resume-close" onclick="closeResumeModal()">&times;</span>
         <iframe src="Resume.pdf" class="resume-iframe" title="Resume PDF"></iframe>
       </div>
     </div>
+  </section>
 
- <!-- Resume Modal -->
-<div id="resumeModal" class="modal">
-    <div class="modal-content">
-      <button class="close" onclick="closeResumeModal()">&times;</button>
-      <iframe src="Resume.pdf" title="Resume"></iframe>
-    </div>
-  </div>
-  
+  <!-- ✅ GA Tracking Script -->
+  <script>
+    document.getElementById('view-resume')?.addEventListener('click', function () {
+      gtag('event', 'resume_view', {
+        event_category: 'engagement',
+        event_label: 'View Resume'
+      });
+    });
 
-    </section>
-  <!-- Scripts -->
+    document.getElementById('download-resume')?.addEventListener('click', function () {
+      gtag('event', 'resume_download', {
+        event_category: 'engagement',
+        event_label: 'Download Resume'
+      });
+    });
+  </script>
+
+  <!-- ✅ Modal JS -->
   <script>
     function openResumeModal() {
       const modal = document.getElementById("resumeModal");
       modal.style.display = "flex";
     }
-  
+
     function closeResumeModal() {
       const modal = document.getElementById("resumeModal");
       modal.style.display = "none";
     }
-  
+
     window.onclick = function (event) {
       const modal = document.getElementById("resumeModal");
       if (event.target === modal) {
@@ -110,4 +102,5 @@
       }
     };
   </script>
-  
+</body>
+</html>
