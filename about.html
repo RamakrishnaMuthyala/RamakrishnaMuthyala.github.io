@@ -25,7 +25,7 @@
         event_label: 'View Resume'
       });
     });
-  
+
     document.getElementById('download-resume')?.addEventListener('click', function () {
       gtag('event', 'resume_download', {
         event_category: 'engagement',
@@ -60,40 +60,102 @@
     </div>
   </header>
 
-  <!-- About Section -->
-  <section class="container">
-    <div class="description">
-      <p class="para">
-        A standout SDET isn't just great at coding or automating tests. They're a savvy blend of code mastery and
-        testing expertise... <!-- shortened for readability -->
-      </p>
-    </div>
+<section class="container">
+        <div class="description">
+            <p class="para">
+                A standout SDET isn't just great at coding or automating tests. They're a savvy blend of code
+                mastery and testing expertise. They deeply understand the application, its purpose, and what users need.
+                They know when to automate tasks and when a human touch is essential. They build and maintain strong
+                automation setups, handle code teamwork, and keep things flowing smoothly. Taking charge, they offer
+                smart solutions to boost test quality and make the whole project shine.
+                </br></br>
 
-    <h2>Here is What People Say about me</h2>
-    <div class="content-grid">
-      <!-- Your testimonials (unchanged) -->
-    </div>
-  </section>
+                Throughout my career, I have consistently demonstrated a masterful combination of coding expertise
+                and meticulous testing methods. This has earned me the reputation of being an invaluable asset to
+                every team I join. My unwavering dedication to deeply understanding applications, coupled with my
+                knack for developing efficient automation frameworks and implementing code enhancements, make me a
+                powerful driving force for project success. As I look towards the future, I remain wholly committed
+                to utilizing these skills to elevate any team I am a part of and surpass all expectations.
+            </p>
+        </div>
+        <h2>Here is What People Say about me</h2>
+        <div class="content-grid">
+            <div class="comment-box">
+                <div class="client-image">
+                    <img class="" src="client-lady-dp.png" title="">
+                </div>
+                <p class="name">Pophali Shraddha</p>
+                <p class="position">QA Lead at USJ Data Project </p>
 
-  <!-- Dark Mode Script -->
-  <script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-    if (isDarkMode) {
-      body.classList.add('dark-mode');
-      darkModeToggle.checked = true;
-    }
-    darkModeToggle.addEventListener('change', () => {
-      if (darkModeToggle.checked) {
-        body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
-        body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'disabled');
-      }
-    });
-  </script>
+                <p class="info">"Ramakrishna is a very keen learner, very thorough tester and an excellent automation
+                    expert. NBCU DataTrack
+                    is a complex application and we have front to back framework covering all layers of the application.
+                    Picking that up and working extended hours and delivering on time with highest quality, Ramakrishna is
+                    an asset to any team. Keep up the great work. "</p>
+            </div>
+            <div class="comment-box">
+                <div class="client-image">
+                    <img class="" src="client-man-dp.png" title="">
+                </div>
+                <p class="name">Bezzam,Chandu Puthra</p>
+                <p class="position">Automation Lead at Capgemini</p>
+
+                <p class="info">"Ramakrishna is a great team player, always willing to go the extra mile to ensure our
+                    projects are successful. His attention to detail and meticulous approach to testing greatly
+                    contributed to the overall quality of our software products. Beyond technical skills, Ramakrishna is a
+                    strong communicator who effectively collaborates with cross-functional teams, including developers,
+                    project managers. I highly recommend Ramakrishna for any organization seeking a skilled and dedicated
+                    automation test engineer. He will undoubtedly be a valuable asset to any team or project."</p>
+            </div>
+            <div class="comment-box">
+                <div class="client-image">
+                    <img class="" src="client-man-dp.png" title="">
+                </div>
+                <p class="name">Kumar Manoj G </p>
+                <p class="position">Automation Engineer at Capgemini </p>
+
+                <p class="info"> just wanted to THANK Ramakrishna for all the work he did while working.
+                    From the first day he started, the contribution he made was so beneficial to the group. Ramakrishna went
+                    above and beyond creating test cases and executing them. Ramakrishna did the analysis to determine where
+                    the issues were and how to solution them. The dedication, work effort, and knowledge he provided
+                    will be missed by all."</p>
+            </div>
+            <div class="comment-box">
+                <div class="client-image">
+                    <img class="" src="client-lady-dp.png" title="">
+                </div>
+                <p class="name">Pavithra</p>
+                <p class="position">QA Lead at Capgemini</p>
+
+                <p class="info">"Ramakrishna is the guy who really loves to take any tech challenge without any hiccups.. I
+                    hardly found any scope which he isn't aware of... In such short experience of his career he is
+                    really very much capable of leading any Automation QA team effectively... He can write any
+                    automation framework whatever it is asked by the client in a quick span. Overall I really want to
+                    work with this guy as much as possible. I won't say 'to have him' but it is a great experience
+                    working alongside him in the team at Capgemini....</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
 
   <!-- ✅ Visitor Tracking Script (Moved to end, logs to Google Sheet) -->
   <script>
