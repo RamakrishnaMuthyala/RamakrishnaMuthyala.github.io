@@ -140,7 +140,7 @@
   -->
     <script> 
   function doPost(e) {
-    const sheet = SpreadsheetApp.openById("1I2qxL54a-0sznyr0bbBPY-b5ligFQ2F-4AacCRw9ON4").getSheetByName("Sheet1");
+    const sheet = SpreadsheetApp.openById("1I2qxL54a-0sznyr0bbBPY-b5ligFQ2F-4AacCRw9ON4").getSheetByName("Visitors");
     const data = JSON.parse(e.postData.contents);
   
     sheet.appendRow([
