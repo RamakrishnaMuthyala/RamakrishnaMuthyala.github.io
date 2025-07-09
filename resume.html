@@ -109,5 +109,35 @@
       }
     };
   </script>
+  <!-- ✅ Visitor Tracking Script (Moved to end, logs to Google Sheet) -->
+  <script>
+    (async () => {
+      try {
+        if (sessionStorage.getItem("visitor-logged")) return;
+
+        const ipRes = await fetch("https://ipapi.co/json");
+        const ipData = await ipRes.json();
+
+        const res = await fetch("https://script.google.com/macros/s/AKfycbwCbFfy7-E8sZH6lLxP5ZLy3z6gjgfIw7fc-QIJ7ab9t8RruSEGED41BIJArSRL1SuKxA/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ip: ipData.ip,
+            city: ipData.city,
+            country: ipData.country_name,
+            browser: navigator.userAgent,
+            referrer: document.referrer,
+            page: window.location.pathname
+          })
+        });
+
+        const result = await res.text();
+        console.log("Visitor tracked:", result); // should be "Success"
+        sessionStorage.setItem("visitor-logged", "1");
+      } catch (err) {
+        console.error("Visitor log failed", err);
+      }
+    })();
+  </script>
 </body>
 </html>
